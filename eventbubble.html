@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+    <script>
+        function fun1(){
+            alert("Listening.... wait...");
+        }
+        window.onload=function(){
+            b1.addEventListener("click",fun1,true);
+        }
+    </script>
+</head>
+
+<body onclick="alert('hello')">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+    <form onclick="alert('hi from form')">
+        <br><br><br><br><r><br>
+        <br>
+        <input type="button" value="none" id="b1">
+
+    </form>
+
+</body>
+
+</html>

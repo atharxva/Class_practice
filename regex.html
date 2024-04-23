@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegEx : Atharva</title>
+    <style>
+        button{
+            width: 200px;
+            height: 100px;
+            font-size: 3em;
+            margin-right: 10px;
+            border-radius: 10px;
+            margin: 20px;
+            background-color: rgb(216, 228, 243);background: linear-gradient(-90deg, #ff0000, #00ff08, #0051ff, #ffffff);
+            background-size: 400% 400%;
+            animation: gradient 8s ease infinite;
+            height: 10vh;
+}
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        button:hover{
+            background-color:  rgb(124, 173, 232);
+            transition: 1s ease-in-out;
+        }
+        input{
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="t1">
+    <button onclick="reg1()">&#128540</button><br>
+    <input type="text" name="" id="t2">
+    <button onclick="reg2()">&#128523</button><br>
+    <input type="text" name="" id="t3">
+    <button onclick="reg3()">&#128520</button><br>
+    <input type="text" name="" id="t4">
+    <button onclick="reg4()">&#128561</button><br>
+
+    <script>
+        function reg1(){
+            alert("Regular Expression 1")
+            let x = t1.value
+            let patt1 = /[abc]/i
+            let cities = ["Ahmedabad", "Pune", "Mumbai", "Bangalore", "Chennai", "Daman", "Pondicherry"]
+            let ans = 0
+            for(let ctr = 0; ctr < cities.length; ctr++){
+                if(patt1.test(cities[ctr])){
+                    ans++;
+                }
+            }
+            alert("Cities with pattern : " + ans)
+        }
+        function reg2(){
+            alert("Regular Expression 2")
+            let empid = t1.value;
+            var patt = /E\d{3}/
+            if(empid.length == 4 && patt.test(empid))
+            document.getElementById("s1").innerHTML = "Valid Employee id";
+            else
+            document.getElementById("s1").innerHTML = "In a valid employee id";
+        }
+        function reg3(){
+            //enter a string in the textbox and conver it into uppercase if it contains mumbai . 
+            alert("Regular Expression 3");
+            var textBox = document.getElementById("t3");
+            var inputString = textBox.value;
+            var containsMumbai = inputString.toLowerCase().includes("mumbai");
+            if (containsMumbai) {
+                textBox.value = inputString.toUpperCase();
+                alert("String converted to uppercase because it contains 'Mumbai'");
+        }
+        }
+        function reg4(){
+            alert("Regular Expression 4")
+            var textBox = document.getElementById("t4");
+            var inputString = textBox.value;
+
+            var containsTamilNadu = inputString.toLowerCase().includes("tamil nadu");
+
+            if (containsTamilNadu) {
+                textBox.value = "Chennai";
+                alert("String replaced with 'Chennai'");
+            }
+}
+    </script>
+</body>
+</html>

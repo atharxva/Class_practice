@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Functions & Strings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4b7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .output {
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Personal Information</h2>
+        <label for="fullName">Enter your full name:</label>
+        <input type="text" id="fullName">
+        <button onclick="formatName()">Format Name</button>
+        <br>
+        <br>
+        <label for="email">Enter your email:</label>
+        <input type="text" id="email">
+        <button onclick="checkEmail()">Check Email</button>
+
+        <button onclick="generatePassword()">Generate Random Password</button>
+
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        function formatName() {
+            var fullNameInput = document.getElementById('fullName').value;
+            var formattedName = formatFullName(fullNameInput);
+            document.getElementById('output').innerText = "Formatted Full Name: " + formattedName;
+        }
+
+        function checkEmail() {
+            var emailInput = document.getElementById('email').value;
+            var isValid = isValidEmail(emailInput);
+            document.getElementById('output').innerText = "Is Valid Email: " + isValid;
+        }
+
+        function generatePassword() {
+            var randomPassword = generateRandomPassword(8); 
+            document.getElementById('output').innerText = "Random Password: " + randomPassword;
+        }
+
+        function formatFullName(fullName) {
+            var words = fullName.split(' ');
+            var formattedName = words.map(function(word) {
+                return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+            }).join(' ');
+            return formattedName;
+        }
+
+        function isValidEmail(email) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function generateRandomPassword(length) 
+        {
+            var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var password = "";
+            for (var i = 0; i < length; i++) {
+                var randomIndex = Math.floor(Math.random() * charset.length);
+                password += charset[randomIndex];
+            }
+            return password;
+        }
+    </script>
+</body>
+</html>

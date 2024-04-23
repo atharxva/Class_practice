@@ -1,0 +1,99 @@
+<!-- <html>
+    <script>
+        function fun1() {
+            alert("switch case");
+        }
+        function fun2() {
+            alert("for loop");
+        }
+        function fun3() {
+            alert("do while loop");
+        }
+        function fun4() {
+            alert("while loop");
+        }
+        function fun5() {
+            alert("foreach loop");
+        }
+    </script>
+    <body>
+        <input type="button" onclick="fun1()" value="switchCase" />
+        <input type="button" onclick="fun2()" value="for loop" />
+        <input type="button" onclick="fun3()" value="do while loop" />
+        <input type="button" onclick="fun4()" value="while loop" />
+        <input type="button" onclick="fun5()" value="foreach loop" />
+    </body>
+</html> -->
+<html>
+    <script>
+        function fun1() {
+            var feedback = parseInt(prompt("Enter feedback: "));
+            var remarks;
+            switch (feedback) {
+                case 1:
+                    remarks = "Below Average";
+                    break;
+                case 2:
+                    remarks = "Average";
+                    break;
+                case 3:
+                    remarks = "Good";
+                    break;
+                case 4:
+                    remarks = "Very Good";
+                    break;
+                case 5:
+                    remarks = "Perfect";
+                    break;
+
+                default:
+                    remarks = "incorrect feedback number.";
+            }
+            alert(remarks);
+        }
+        function fun2() {
+            alert("for loop");
+        }
+        function fun3() {
+            alert("do while loop");
+        }
+        function fun4() {
+            alert("while loop");
+        }
+        function fun5() {
+            alert("foreach loop");
+        }
+    </script>
+    <body>
+        <input
+            type="button"
+            onclick="fun1()"
+            value="switchCase"
+            style="margin-bottom: 10px"
+        /><br />
+        <input
+            type="button"
+            onclick="fun2()"
+            value="for loop"
+            style="margin-bottom: 10px"
+        /><br />
+        <input
+            type="button"
+            onclick="fun3()"
+            value="do while loop"
+            style="margin-bottom: 10px"
+        /><br />
+        <input
+            type="button"
+            onclick="fun4()"
+            value="while loop"
+            style="margin-bottom: 10px"
+        /><br />
+        <input
+            type="button"
+            onclick="fun5()"
+            value="foreach loop"
+            style="margin-bottom: 10px"
+        />
+    </body>
+</html>

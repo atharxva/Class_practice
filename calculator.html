@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Calculator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    input[type="button"] {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        font-size: 20px;
+    }
+    .button{
+        background-color: rgb(0, 0, 0);
+        border-radius: 10px;
+        border-color: white;
+        border-width: 0px;
+        color: white;
+    }
+    
+    .clear{
+        background-color: rgb(0, 140, 255);
+        width:30px;
+        border-width: 0px;
+        border-radius: 20px;
+    }
+    .display{
+        width: 240px;
+        height: 100px;
+        border-radius: 5px;
+        border-color: black;
+        background-color: rgb(255, 253, 251);
+
+    }
+
+    
+</style>
+</head>
+<body>
+    <div class = "calculator">
+        <h2>Simple Calculator</h2>
+    <input class = "display" type="text" id="display" disabled><br>
+    <input  class = "button" type="button" value="7" onclick="addToDisplay('7')">
+    <input class = "button" type="button" value="8" onclick="addToDisplay('8')">
+    <input class = "button" type="button" value="9" onclick="addToDisplay('9')">
+    <input class = "button" type="button" value="/" onclick="addToDisplay('/')"><br>
+    <input class = "button" type="button" value="4" onclick="addToDisplay('4')">
+    <input class = "button" type="button" value="5" onclick="addToDisplay('5')">
+    <input class = "button" type="button" value="6" onclick="addToDisplay('6')">
+    <input class = "button"type="button" value="*" onclick="addToDisplay('*')"><br>
+    <input  class = "button"type="button" value="1" onclick="addToDisplay('1')">
+    <input  class = "button" type="button" value="2" onclick="addToDisplay('2')">
+    <input class = "button" type="button" value="3" onclick="addToDisplay('3')">
+    <input class = "button" type="button" value="-" onclick="addToDisplay('-')"><br>
+    <input class = "button" type="button" value="0" onclick="addToDisplay('0')">
+    <input class = "button" type="button" value="." onclick="addToDisplay('.')">
+    <input class = "button" type="button" value="=" onclick="calculate()">
+    <input class = "button" type="button" value="+" onclick="addToDisplay('+')"><br>
+    <input class = "clear" type="button" value="C" onclick="clearDisplay()">
+    </div>
+    
+    <script>
+        function addToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+        
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+        
+        function calculate() {
+            var displayValue = document.getElementById('display').value;
+            var result = eval(displayValue);
+            document.getElementById('display').value = result;
+        }
+    </script>
+</body>
+</html>

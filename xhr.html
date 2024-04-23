@@ -1,0 +1,43 @@
+<html>
+
+<head>
+
+<title>XMLHttpRequest</title>
+    <style>
+
+
+    </style>
+
+</head>
+
+<body>
+
+<script>
+
+var xhr = new XMLHttpRequest(); xhr.responseType='blob';
+
+xhr.open('get', 'http://localhost:5500/assets/pain.jpg', true);
+
+xhr.responseType ='blob'; 
+xhr.onload = function(e)
+
+{
+
+if (xhr.status == 200) 
+{ 
+    var blob  = this.response; 
+    alert("sha hi"+ blob);
+    let img = document.createElement('img');
+    img.src = window.URL.createObjectURL(blob);
+    document.body.appendChild(img);
+}
+
+}
+
+xhr.send();
+
+</script>
+
+</body>
+
+</html>

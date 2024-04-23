@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 7</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #b5fad0;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+        .form {
+            background-color: rgb(217, 231, 252);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form:hover{
+            box-shadow: 10px 15px ;
+            border-color: black;
+            transition: 0.5s ease-in-out;
+        }
+
+        form {
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <h1>Enter Details:</h1>
+        <form onsubmit="openwin()">
+            Enter first name: <input type="text" id="txt1" name="firstName" required><br><br>
+            Enter last name: <input type="text" id="txt2" name="lastName" required><br><br>
+            Phone number: <input type="tel" id="txt3" name="phoneNumber" required><br><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        function openwin() {
+            var firstName = document.getElementById("txt1").value;
+            var lastName = document.getElementById("txt2").value;
+            var phoneNumber = document.getElementById("txt3").value;
+
+            var mywindow = window.open("", "Msgwindow", "width=500,height=300");
+            mywindow.document.write("<h1 style='text-align:center;'>Form Successfully Submitted!</h1>");
+            mywindow.document.write("<h2 style='text-align:center;'>Name: " + firstName + " " + lastName + "</h2>");
+            mywindow.document.write("<h2 style='text-align:center;'>Contact Info: " + phoneNumber + "</h2>");
+            mywindow.document.write("<input type='button' value='Close window' onclick='window.close()'>");
+        }
+    </script>
+</body>
+</html>

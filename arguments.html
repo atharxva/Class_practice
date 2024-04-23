@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Payments</title>
+    </head>
+    <body>
+        <button onclick="Bhimupi(null,null,9000)">Bhimupi1</button>
+        <button onclick="Bhimupi(901124789,22343421321,9000)">Bhimupi2</button>
+        <button onclick="Gpay(1,2,100000)">Gpay 1</button>
+        <button onclick="Gpay(null,null,9000)">Gpay 2</button>
+        <button onclick="Phonepay(null,null,9000)">Phonepay 1</button>
+        <button onclick="Phonepay(2324,234324,9000)">Phonepay 2</button>
+
+        <script>
+            function upi(Mfrom, Mto, amount, fun1) {
+                if (Mfrom == null || Mto == null || amount == null) {
+                    fun1("Error");
+                } else {
+                    fun1("Success");
+                }
+            }
+
+            function Bhimupi(m1, m2, amt) {
+                upi(m1, m2, amt, function (a) {
+                    if (a.toLowerCase() == "success") {
+                        document.write(
+                            "<p style = 'color: green'>Payment Done</p>"
+                        );
+                    } else if (a.toLowerCase() == "error") {
+                        document.write("<p style = 'color: red'>Error</p>");
+                    } else {
+                        document.write("Unknown");
+                    }
+                });
+            }
+
+            function Gpay(m1, m2, amt) {
+                upi(m1, m2, amt, function (a) {
+                    if (a.toLowerCase() == "success") {
+                        document.write(
+                            "<img src = 'paymentdone.png' width: 300px>"
+                        );
+                    } else if (a.toLowerCase() == "error") {
+                        document.write(
+                            "<img src = 'paymenterror.png' width: 300px>"
+                        );
+                    } else {
+                        document.write("Unknown");
+                    }
+                });
+            }
+
+            function Phonepay(m1, m2, amt) {
+                upi(m1, m2, amt, function (a) {
+                    if (a.toLowerCase() == "success") {
+                        document.write(
+                            "<p style = 'color: green'>&#8377;" +
+                                amt +
+                                "received</p>"
+                        );
+                    } else if (a.toLowerCase() == "error") {
+                        document.write(
+                            "<p style = 'color: red'>&#8377;" +
+                                amt +
+                                " not received</p>"
+                        );
+                    } else {
+                        document.write("Unknown");
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

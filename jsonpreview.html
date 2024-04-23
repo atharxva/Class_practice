@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 80px;
+            height: 80px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+    <button onclick="getJson()">Get JSON</button>
+    <script>
+        let xhr = new XMLHttpRequest()
+        xhr.responseType = 'json'
+        xhr.open('get', 'info.json', true);
+        
+        xhr.onload = function() {
+            let result = xhr.response;
+            let output = "";
+
+            for (let key in result) {
+                if (typeof result[key] === 'object') {
+                    for (let value in result[key]) {
+                        if (result[key][value].match(/\.(jpeg|jpg|gif|png)$/) != null) {
+                            output += "<img src='" + result[key][value] + "' alt='" + key + "'>";
+                        } else {
+                            output += result[key][value] + "     ";
+                        }
+                    }
+                } else {
+                    output += "<p>" + key + ": " + result[key] + "</p>";
+                }
+                output += "<p>\n</p>"
+            }
+
+            document.getElementById("d1").innerHTML = output;
+        };
+
+        function getJson(){
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <button onclick="example1()">Object 1</button>
+    <button onclick="example2()">Object 2</button>
+    <button onclick="example3()">Object 3</button>
+    <button onclick="example4()">Object 4</button>
+    <script>
+        function example1() {
+            alert("Object 1")
+            let mobileObj = {
+                model: "Realme",
+                price : 18000,
+                camera : "64MP"                
+            }
+
+            alert(mobileObj.model)
+            mobileObj.model = "Jio"
+            alert(mobileObj["model"])
+            alert(mobileObj["price"])
+            alert(mobileObj["camera"])
+        }
+
+        function example2() {
+            alert("Object 2")
+            let obj = {
+                instrument : "Guitar",
+                price : 10000
+            }
+
+            alert(obj.instrument)
+            alert(obj["price"])
+            obj.type = "acoustic"
+            obj.material = "wood"
+            alert(obj["type"])
+            alert(obj["material"])
+            delete obj.price
+            alert(obj["price"])
+        }
+
+        function example3() {
+            alert("Object 3")
+            var objSong = {
+                songName : "Trees talk", 
+                genre : "pop",
+                singer : "gavn!"
+            }
+
+            for(x in objSong){
+                alert(objSong[x])
+            }
+        }
+
+        function example4() {
+            alert("Object 4")
+
+            let laptops = [{
+                model : "HCL",
+                price : 33000
+            },
+            {
+                model : "HP",
+                price : 43000
+            },
+            {
+                model : "Dell", 
+                price : 23000
+            },
+            {
+                model : "MacBook",
+                price : 60000
+            }]
+
+            document.write(laptops)
+            document.write(laptops[1] + "<br>")
+
+            for(x in laptops){
+                for(y in laptops[x]){
+                    document.write(laptops[x][y] + " : ")
+                }
+                document.write("<hr><br>")
+            }
+        }
+    </script>
+</body>
+</html>
