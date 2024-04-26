@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function factorial(n) {
+    if (n === 0 || n === 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+function square(n) {
+    return n * n;
+}
+
+function arithmeticOperation(num1, num2, operator) {
+    switch (operator) {
+        case '+':
+            return num1 + num2;
+        case '-':
+            return num1 - num2;
+        case '*':
+            return num1 * num2;
+        case '/':
+            if (num2 !== 0) {
+                return num1 / num2;
+            } else {
+                return "Error: Division by zero";
+            }
+        default:
+            return "Error: Invalid operator";
+    }
+}
+
+console.log("Factorial of 5:", factorial(5));
+console.log("Square of 4:", square(4));
+console.log("Addition of 10 and 5:", arithmeticOperation(10, 5, '+'));
+console.log("Subtraction of 10 and 5:", arithmeticOperation(10, 5, '-'));
+console.log("Multiplication of 10 and 5:", arithmeticOperation(10, 5, '*'));
+console.log("Division of 10 by 5:", arithmeticOperation(10, 5, '/'));
+console.log("Division of 10 by 0:", arithmeticOperation(10, 0, '/'));
+console.log("Invalid operation:", arithmeticOperation(10, 5, '%'));
+
+    </script>
+    
+</body>
+</html>

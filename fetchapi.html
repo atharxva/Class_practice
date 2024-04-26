@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+
+        <script>
+        
+        async function getdata() {
+        const response = await fetch("https://localhost:7011/api/Crud"); 
+        const jsonData = await response.json(); alert(jsonData);
+        
+        } async function postdata() {
+        
+        alert("data posted")
+        
+        } async function putdata() {
+        
+        }
+        
+        alert("data updated")
+        
+        async function deletedata() { alert("data deleted")}
+        </script>
+        <input type="button" onclick="getdata()" value="get">
+        <br/>
+        <input type="button" onclick="postdata()" value="post">
+        <br/>
+        <input type="button" onclick="putdata()" value="put">
+        <br/>
+
+        <input type = "button" onclick = "deletedata()"value = "delete">
+        
+</body>
+</html>
