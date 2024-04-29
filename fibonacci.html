@@ -1,0 +1,59 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonaaci</title>
+</head>
+<body>
+    <script>
+        n = prompt("Enter number of terms you want")
+        let t1 = 0,t2=1,nt =0;
+        for(let i=0;i<n;i++) {
+            if(i==0){
+                console.log(t1)
+                continue
+            }
+            else if(i==1){
+                console.log(t2)
+                continue;
+            }
+            else{
+                nt = t1+t2;
+                t1 = t2;
+                t2 = nt;
+                console.log(nt)
+            }
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+       a = (prompt("Enter a string"))
+       console.log(a)
+    
+        let b="";
+       for(let i=a.length-1;i>=0;i--)
+        {
+            b+=a[i];
+        }
+        console.log(b)
+        if(a==b){
+            console.log("palindrome")
+        }
+        else{
+            console.log("not palindrome")
+        }
+    </script>
+</body>
+</html>
